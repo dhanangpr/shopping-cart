@@ -54,7 +54,7 @@ function removeCart(id) {
 
 function generateCart() {
     let result = '';
-    cart = JSON.parse(localStorage.getItem('productsInCart'));
+    let cart = JSON.parse(localStorage.getItem('productsInCart'));
     for (let i = 0; i < cart.length; i++) {
         result += `<div class="card box-shadow">
           <div class="card-header">
