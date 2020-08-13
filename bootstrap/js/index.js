@@ -62,7 +62,7 @@ function generateCart() {
           </div>
           <div class="card-body">
             <h5 class="card-title pricing-card-title">Rp. ${cart[i].price}</h5>
-            <button type="submit" class="btn btn-outline-primary" onclick="removeCart(${cart[i].id})">Remove from cart</button>
+            <button type="submit" class="btn btn-outline-primary" onclick="removeCart(${i})">Remove from cart</button>
           </div>
         </div>`
     }
