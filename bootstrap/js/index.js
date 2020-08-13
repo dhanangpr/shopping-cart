@@ -67,6 +67,5 @@ function removeCart(id) {
     let cart = JSON.parse(localStorage.getItem("productsInCart"))
     cart.splice(id, 1) // Delete dari local storage
     localStorage.setItem('productsInCart', JSON.stringify(cart)); // Set local storage
-    console.log(cart);
-    location.reload();
+    return generateCart();
 }
