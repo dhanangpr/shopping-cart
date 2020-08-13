@@ -45,9 +45,16 @@ function addCart(id) {
     localStorage.setItem('productsInCart', JSON.stringify(cart)); // Set local storage
 }
 
+function removeCart(id) {
+    let cart = JSON.parse(localStorage.getItem("productsInCart"))
+    cart.splice(id, 1) // Delete dari local storage
+    localStorage.setItem('productsInCart', JSON.stringify(cart)); // Set local storage
+    return generateCart();
+}
+
 function generateCart() {
-    cart = JSON.parse(localStorage.getItem('productsInCart'));
     let result = '';
+    cart = JSON.parse(localStorage.getItem('productsInCart'));
     for (let i = 0; i < cart.length; i++) {
         result += `<div class="card box-shadow">
           <div class="card-header">
@@ -63,9 +70,3 @@ function generateCart() {
     return result;
 }
 
-function removeCart(id) {
-    let cart = JSON.parse(localStorage.getItem("productsInCart"))
-    cart.splice(id, 1) // Delete dari local storage
-    localStorage.setItem('productsInCart', JSON.stringify(cart)); // Set local storage
-    return generateCart();
-}
